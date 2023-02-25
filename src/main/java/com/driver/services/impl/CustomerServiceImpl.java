@@ -48,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
 		List<Driver> driverList= driverRepository2.findAll();
 
 		for(Driver driver : driverList){
-			if(driver!= null && driver.getCab().isAvailable()){
+			if(driver!= null && driver.getCab().getAvailable()){
 				// Creating a new trip and setting its values
 				TripBooking newTrip= new TripBooking();
 				newTrip.setCustomer(customerRepository2.findById(customerId).get());
